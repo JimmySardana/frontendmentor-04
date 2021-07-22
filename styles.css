@@ -9,8 +9,12 @@ body {
     font-size: 0.94rem;
 }
 
-#desktop {
+.desktop {
     display: none;
+}
+
+.background {
+    z-index: -1;
 }
 
 main {
@@ -84,6 +88,7 @@ main {
     color: hsl(0, 0%, 100%);
     background-color: hsl(300, 43%, 22%);
     margin-bottom: 1rem;
+    height: 100%;
 }
 
 .review .profile {
@@ -125,11 +130,11 @@ main {
         display: flex;
     }
 
-    #desktop {
+    .desktop {
         display: block;
     }
 
-    #mobile {
+    .mobile {
         display: none;
     }
 
@@ -147,11 +152,14 @@ main {
     }
 
     .reviews {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        column-gap: 1rem;
     }
-
-    .reviews > div:nth-child(-n+3) {
-        margin-right: 1rem;
+    
+    .review {
+        margin-bottom: 0;
     }
 
 }
@@ -192,20 +200,19 @@ main {
 
     .reviews {
         margin-top: 2rem;
-        height: 320px;
     }
 
-    .reviews div:nth-child(2) {
-        align-self: center;
+    .reviews > div:nth-child(1) {
+        padding-bottom: 2rem;
+    }
+    .reviews > div:nth-child(2) {
+        padding: 1rem 0;
     }
 
-    .reviews div:nth-child(3) {
-        align-self: flex-end;
+    .reviews > div:nth-child(3) {
+        padding-top: 2rem;
     }
-
-    .review {
-        height: fit-content;
-    }
+    
 }
 
 
